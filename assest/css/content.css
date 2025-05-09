@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --font-family-main: 'Poppins', sans-serif;
+    
+    --color-primary: red;
+    --color-primary-dark: #b00202;
+    --color-primary-darker: #950c0c;
+    --brand-accent-color: rgb(167, 3, 3);
+
+    --text-color-light: white;
+    --text-color-dark: #333;
+    --text-color-medium: rgb(84, 83, 83);
+    --text-color-nav-link: var(--color-primary);
+
+    --bg-body: #939393;
+    --bg-nav: #333;
+    --bg-footer: #b3b3b3;
+    --bg-hasil-li: #868686;
+    --bg-hasil-li-hover: #646464;
+    --bg-hasil-li-border: #4a4a4a;
+
+    --shadow-color-main: var(--color-primary);
+    --shadow-text-main: 5px 5px 5px var(--shadow-color-main);
+    --shadow-text-subtle: 4px 4px 4px black;
+    --shadow-icon: 4px 4px 15px var(--shadow-color-main);
+
+    --border-radius-sm: 6.5px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 10px;
+    --border-radius-round: 50%;
+
+    --transition-duration: 0.3s;
+    --transition-duration-fast: 0.2s;
+    --transition-timing: ease-in;
+}
+
+*, html, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body {
+    background-color: var(--bg-body);
+    font-family: var(--font-family-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color-dark);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 4%;
+    align-items: center;
+    color: var(--color-primary);
+    width: 100%;
+    background-color: var(--bg-nav);
+    box-shadow: 6px 6px 18px var(--shadow-color-main);
+    flex-wrap: wrap; }
+
+nav .brand {
+    font-size: 37px;
+    font-weight: 600;
+    color: var(--color-primary); }
+
+nav .brand span {     color: var(--brand-accent-color);
+    font-weight: 500;
+}
+
+.nav-menu-button {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+    padding: 5px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    font-size: 22px;
+    color: var(--text-color-nav-link);
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 3px;
+    transition: color var(--transition-duration) var(--transition-timing);
+}
+
+nav ul li a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-primary-dark);
+    transition: width var(--transition-duration) var(--transition-timing);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+nav ul li a:hover {
+    color: var(--color-primary-dark);
+}
+
+.container {
+    flex-grow: 1;     margin: 4% auto;     padding: 0 2%;     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px; }
+
+.container h1 {
+    font-size: 40px;
+    color: var(--text-color-light);
+    text-shadow: var(--shadow-text-main);
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 400px; }
+
+label {
+    display: block;     font-size: 22px;     font-weight: 500;
+    color: var(--text-color-light);
+    margin-bottom: 8px;     text-shadow: var(--shadow-text-subtle);
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px 15px;     border-radius: var(--border-radius-sm);
+    outline: none;
+    border: 1px solid transparent;     margin: 0;     font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+    transition: border-color var(--transition-duration-fast) ease-in-out;
+}
+
+input[type="number"]:focus {
+    border: 1px solid var(--color-primary);
+}
+
+#acakKelompok {
+    background: none;
+    border-radius: var(--border-radius-md);
+    margin: 20px 0 30px 0;
+    padding: 12px 25px;     border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    font-size: 18px;
+    font-weight: 500;     cursor: pointer;
+    transition: all var(--transition-duration) var(--transition-timing);
+}
+
+#acakKelompok:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--text-color-light);
+    border-color: var(--color-primary-dark);
+}
+
+#hasilBox {
+    width: 90%;     max-width: 700px;     border: 2px solid var(--color-primary);
+    color: var(--text-color-light);
+    padding: 20px 30px;     border-radius: var(--border-radius-md);
+    margin-top: 20px; }
+
+#hasilBox.hidden {
+    display: none;
+}
+
+#hasilBox > h2 {     text-shadow: 4px 4px 4px var(--brand-accent-color);     margin: 0 0 20px 0;     font-size: 32px;
+    animation: h2Hasil 1.5s ease-in-out alternate infinite;
+}
+
+@keyframes h2Hasil {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+
+#hasil h2 {     font-size: 24px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: var(--text-color-light);
+}
+#hasil h2:first-child {
+    margin-top: 0;
+}
+
+#hasil ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0;     flex-wrap: wrap;
+    margin-bottom: 15px; }
+
+#hasil ul li {
+    background: var(--bg-hasil-li);
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    border: 1px solid var(--bg-hasil-li-border);
+    border-radius: var(--border-radius-sm);
+    color: var(--text-color-light);
+    font-size: 18px;     transition: all var(--transition-duration) var(--transition-timing);
+}
+
+#hasil ul li:hover {
+    background: var(--bg-hasil-li-hover);
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+#bagikanBox {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#bagikanBox.hidden {
+    display: none;
+}
+
+#bagikanBox button,
+#bagikanBox a {
+    background-color: var(--color-primary);
+    color: var(--text-color-light);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: background-color var(--transition-duration) var(--transition-timing);
+    display: inline-flex;     align-items: center;
+    gap: 8px; }
+
+#bagikanBox button:hover,
+#bagikanBox a:hover {
+    background-color: var(--color-primary-dark);
+}
+
+#btnCopy:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+
+footer {
+    width: 100%;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--bg-footer);
+    padding: 30px 20px;     margin-top: 50px; }
+
+footer h2 {
+    font-size: 30px;     color: var(--text-color-light);
+    text-shadow: 3px 3px 3px var(--shadow-color-main);
+    margin-bottom: 15px; }
+
+footer .icon-container {
+    display: flex;
+    gap: 20px;     margin-bottom: 20px; }
+
+footer .icon-container a i {
+    font-size: 30px;
+    color: var(--text-color-dark);     padding: 10px;     background-color: transparent;     border-radius: var(--border-radius-round);
+    box-shadow: var(--shadow-icon);
+    transition: color var(--transition-duration) ease, transform var(--transition-duration) ease;
+}
+footer .icon-container a:hover i {
+    color: var(--color-primary);
+    transform: translateY(-3px);
+}
+
+footer p {
+    font-size: 18px;     font-weight: 500;
+    color: var(--text-color-medium);
+}
+
+@media (max-width: 992px) {     nav {
+        padding: 3% 5%;
+    }
+    nav .brand {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu-button {
+        display: block;     }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;         margin-top: 15px;
+        background-color: var(--bg-nav);         padding: 10px 0;     }
+    nav ul.hidden {
+        display: none;
+    }
+
+    nav ul li {
+        background-color: var(--color-primary);
+        width: 90%;         margin: 5px auto;         padding: 10px 20px;
+        border-radius: var(--border-radius-lg);
+        text-align: center;
+        transition: background-color var(--transition-duration) var(--transition-timing);
+    }
+    nav ul li:hover {
+        background-color: var(--color-primary-darker);
+    }
+    nav ul li a {
+        font-size: 18px;
+        color: var(--text-color-light);
+        width: 100%;
+        display: block;     }
+    nav ul li a:after {         display: none;
+    }
+
+    .container h1 {
+        font-size: 32px;
+    }
+    label {
+        font-size: 20px;
+    }
+    input[type="number"] {
+        font-size: 16px;         padding: 8px 12px;
+    }
+    #acakKelompok {
+        font-size: 17px;
+        padding: 10px 20px;
+    }
+    #hasilBox > h2 {
+        font-size: 28px;
+    }
+    #hasil h2 {
+        font-size: 22px;
+    }
+    #hasil ul li {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+    #bagikanBox button,
+    #bagikanBox a {
+        font-size: 15px;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        padding: 4% 5%;
+    }
+    nav .brand {
+        font-size: 24px;
+    }
+    .container {
+        margin-top: 6%;
+    }
+    .container h1 {
+        font-size: 28px;     }
+    label {
+        font-size: 18px;
+    }
+    #hasilBox > h2 {
+        font-size: 24px;
+    }
+    #hasil h2 {
+        font-size: 20px;
+    }
+    footer h2 {
+        font-size: 26px;
+    }
+    footer p {
+        font-size: 16px;
+    }
+    .input-group {
+        max-width: 90%;
+    }
+}

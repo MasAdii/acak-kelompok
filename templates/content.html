@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/assest/css/content.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        >
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
+        <title>AdiCak - Mulai</title>
+    </head>
+    <body>
+        <nav>
+            <div class="brand">
+                Adi
+                <span style="color: var(--brand-accent-color); font-weight: 500;">Cak</span>
+            </div>
+            <button class="nav-menu-button" id="nav-menu-button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="menu-list">
+                <i class="ph ph-list"></i>
+            </button>
+            <ul id="menu-list" class="hidden">
+                <li>
+                    <a href="/index.html">Home</a>
+                </li>
+                <li>
+                    <a href="content.html">Mulai</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="container">
+            <h1>Mulai Acak Kelompokmu</h1>
+            <div class="input-group">
+                <label for="totalOrang">
+                    Total Orang:
+                </label>
+                <input type="number" id="totalOrang" min="1" placeholder="Contoh: 10">
+            </div>
+            <div class="input-group">
+                <label for="orangPerKelompok">
+                    Jumlah Per Kelompok:
+                </label>
+                <input type="number" id="orangPerKelompok" min="1" placeholder="Contoh: 2">
+            </div>
+            <button id="acakKelompok">Acak Kelompok</button>
+
+            <div id="hasilBox" class="hidden">
+                <h2>Hasil Kelompok:</h2>
+                <div id="hasil">
+                                    </div>
+                <div id="bagikanBox" class="hidden">
+                    <button id="btnCopy">
+                        <i class="ph ph-copy"></i> <span>Salin Hasil</span>
+                    </button>
+                    <a id="btnWA" target="_blank" class="btn-share-wa">
+                        <i class="fa-brands fa-whatsapp"></i> <span>Bagikan ke WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <h2>Social Media</h2>
+            <div class="icon-container">
+                <a href="https://www.instagram.com/nulltrace404" target="_blank" rel="noopener noreferrer" aria-label="Instagram AdiCak">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.github.com/masadii" target="_blank" rel="noopener noreferrer" aria-label="GitHub AdiCak">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+            <p>© AdiCak <span id="copyright-year">2025</span> All Rights Reserved</p>
+        </footer>
+
+        <script src="/assest/js/content.js"></script>
+    </body>
+</html>
