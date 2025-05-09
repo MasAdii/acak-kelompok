@@ -14,7 +14,7 @@ form.addEventListener('submit', (e) => {
     const pesan = document.getElementById('pesan').value.trim()
 
     if (name && email && pesan){
-        window.location.href = 'sukses.html'
+        window.location.href = '../sukses.html'
     }else{
         alert('Masukkan input yang valid')
     }
