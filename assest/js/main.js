@@ -19,26 +19,3 @@ if ('serviceWorker' in navigator) {
       console.error('Service Worker registration failed:', error);
     });
 }
-
-
-let deferredPrompt
-const installButton = document.getElementById('installButton')
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault() 
-  deferredPrompt = e
-  installButton.style.display = 'block' 
-})
-
-installButton.addEventListener('click', () => {
-  deferredPrompt.prompt() 
-  deferredPrompt.userChoice.then((choiceResult) => {
-    if (choiceResult.outcome === 'accepted') {
-      console.log('Pengguna memilih untuk menginstal aplikasi')
-    } else {
-      console.log('Pengguna membatalkan instalasi')
-      installButton.style.display = 'none' 
-    }
-    deferredPrompt = null 
-  })
-})
