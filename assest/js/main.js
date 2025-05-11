@@ -9,3 +9,21 @@ navMenu.addEventListener('click', () => {
 mulaiBtn.addEventListener('click', () => {
     location.href = 'templates/content.html'
 })
+
+
+let deferredPrompt
+const installButton = document.getElementById('installButton')
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault()
+  deferredPrompt = e
+  installButton.style.display = 'block'
+})
+
+installButton.addEventListener('click', () => {
+  deferredPrompt.prompt()
+  deferredPrompt.userChoice.then((choiceResult) => {
+    console.log(choiceResult.outcome)
+    deferredPrompt = null
+  })
+})
