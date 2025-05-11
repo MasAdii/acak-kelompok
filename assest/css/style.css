@@ -183,8 +183,6 @@ nav ul li a:hover::after{
     z-index: 1000;
 }
 
-
-
 footer{
     margin-top: 50px;
     animation: footer 1s ease-in-out alternate forwards;

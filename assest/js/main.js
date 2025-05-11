@@ -14,13 +14,13 @@ let deferredPrompt
 const installButton = document.getElementById('installButton')
 
 window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault()
+  e.preventDefault() 
   deferredPrompt = e
-  installButton.style.display = 'block'
+  installButton.style.display = 'block' 
 })
 
 installButton.addEventListener('click', () => {
-  deferredPrompt.prompt()
+  deferredPrompt.prompt() 
   deferredPrompt.userChoice.then((choiceResult) => {
     if (choiceResult.outcome === 'accepted') {
       console.log('Pengguna memilih untuk menginstal aplikasi')
@@ -28,6 +28,6 @@ installButton.addEventListener('click', () => {
       console.log('Pengguna membatalkan instalasi')
       installButton.style.display = 'none' 
     }
-    deferredPrompt = null
+    deferredPrompt = null 
   })
 })
