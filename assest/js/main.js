@@ -10,7 +10,6 @@ mulaiBtn.addEventListener('click', () => {
     location.href = 'templates/content.html'
 })
 
-
 let deferredPrompt
 const installButton = document.getElementById('installButton')
 
@@ -23,7 +22,12 @@ window.addEventListener('beforeinstallprompt', (e) => {
 installButton.addEventListener('click', () => {
   deferredPrompt.prompt()
   deferredPrompt.userChoice.then((choiceResult) => {
-    console.log(choiceResult.outcome)
+    if (choiceResult.outcome === 'accepted') {
+      console.log('Pengguna memilih untuk menginstal aplikasi')
+    } else {
+      console.log('Pengguna membatalkan instalasi')
+      installButton.style.display = 'none' 
+    }
     deferredPrompt = null
   })
 })
